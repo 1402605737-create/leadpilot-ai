@@ -1,0 +1,22 @@
+{
+  "name": "@leadpilot/api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "tsc --noEmit",
+    "test": "node --test",
+    "build": "tsc --noEmit",
+    "db:init": "tsx scripts/init-db.ts"
+  },
+  "dependencies": {
+    "@leadpilot/shared": "*",
+    "pg": "^8.21.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.15.6",
+    "@vercel/node": "^5.8.16",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

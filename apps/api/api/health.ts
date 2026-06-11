@@ -1,0 +1,28 @@
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { query } from "../lib/db";
+import { applyCors, methodNotAllowed } from "../lib/http";
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (applyCors(req, res)) return;
+  if (req.method !== "GET") return methodNotAllowed(res, ["GET", "OPTIONS"]);
+  try {
+    const result = await query<{ count: string }>("select count(*)::text as count from leads");
+    return res.status(200).json({
+      status: "ok",
+      database: "postgres",
+      database_connected: true,
+      deepseek_configured: Boolean(process.env.DEEPSEEK_API_KEY),
+      case_count: Number(result.rows[0]?.count || 0)
+    });
+  } catch (error) {
+    return res.status(503).json({
+      status: "degraded",
+      database: "postgres",
+      database_connected: false,
+      deepseek_configured: Boolean(process.env.DEEPSEEK_API_KEY),
+      case_count: 0,
+      error: error instanceof Error ? error.message : "database_error"
+    });
+  }
+}
+

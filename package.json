@@ -1,0 +1,22 @@
+{
+  "name": "leadpilot-ai",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @leadpilot/web",
+    "dev:api": "vercel dev apps/api",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "db:init": "npm run db:init -w @leadpilot/api"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+
