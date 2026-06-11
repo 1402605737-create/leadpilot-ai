@@ -1,4 +1,4 @@
-import type { ICP, Lead, Reply, ReplyType } from "./types";
+import type { ICP, Lead, Reply, ReplyType } from "./types.js";
 
 export const defaultICP: ICP = {
   targetIndustries: ["SaaS", "Cybersecurity", "Data Analytics", "AI Productivity Tools"],
@@ -73,4 +73,3 @@ export const mockReplies: Reply[] = replySeeds.map(([leadIndex, content, classif
   sentiment: classifiedType === "Interested" ? "positive" : classifiedType === "Rejection" ? "negative" : "neutral",
   recommendedAction: ""
 }));
-

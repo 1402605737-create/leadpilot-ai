@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { query } from "../../lib/db";
-import { applyCors, methodNotAllowed } from "../../lib/http";
+import { query } from "../../lib/db.js";
+import { applyCors, methodNotAllowed } from "../../lib/http.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (applyCors(req, res)) return;

@@ -1,4 +1,4 @@
-import type { Channel, ICP, Lead, OutreachDraft, ReplyType, ScoreBreakdown } from "./types";
+import type { Channel, ICP, Lead, OutreachDraft, ReplyType, ScoreBreakdown } from "./types.js";
 
 const clamp = (value: number, max: number) => Math.min(Math.max(value, 0), max);
 
@@ -132,4 +132,3 @@ export function calculateDashboardMetrics(leads: Lead[], draftCount: number, rep
     crmCompleteness: 92
   };
 }
-

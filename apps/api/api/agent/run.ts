@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { randomUUID } from "node:crypto";
-import { query } from "../../lib/db";
-import { fallbackFor, runDeepSeek, validateAgentInput } from "../../lib/agent";
-import { applyCors, methodNotAllowed } from "../../lib/http";
+import { query } from "../../lib/db.js";
+import { fallbackFor, runDeepSeek, validateAgentInput } from "../../lib/agent.js";
+import { applyCors, methodNotAllowed } from "../../lib/http.js";
 
 const recent = new Map<string, number>();
 let lastGlobalRun = 0;
@@ -38,7 +38,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       result,
       createdAt: new Date().toISOString()
     };
-    await query("insert into leadpilot.ai_runs(id, task, lead_id, model, fallback, status, evidence, steps, result, created_at) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)", [run.id, run.task, run.leadId, run.model, run.fallback, run.status, run.evidence, run.steps, run.result, run.createdAt]);
+    await query("insert into leadpilot.ai_runs(id, task, lead_id, model, fallback, status, evidence, steps, result, created_at) values($1,$2,$3,$4,$5,$6,$7::jsonb,$8::jsonb,$9::jsonb,$10)", [run.id, run.task, run.leadId, run.model, run.fallback, run.status, JSON.stringify(run.evidence), JSON.stringify(run.steps), JSON.stringify(run.result), run.createdAt]);
     return res.status(200).json(run);
   } catch (error) {
     return res.status(400).json({ error: error instanceof Error ? error.message : "invalid_request" });

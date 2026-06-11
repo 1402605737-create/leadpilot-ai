@@ -1,4 +1,6 @@
 {
+  "buildCommand": "npm run build -w @leadpilot/shared && npm run build -w @leadpilot/api",
+  "outputDirectory": "apps/api/public",
   "rewrites": [
     { "source": "/health", "destination": "/api/health" }
   ],
@@ -8,4 +10,3 @@
     }
   }
 }
-

@@ -12,7 +12,7 @@
     "dev:api": "vercel dev apps/api",
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
-    "build": "npm run build --workspaces --if-present",
+    "build": "npm run build -w @leadpilot/shared && npm run build -w @leadpilot/api && npm run build -w @leadpilot/web",
     "db:prepare": "npm run db:prepare -w @leadpilot/api",
     "db:verify": "npm run db:verify -w @leadpilot/api"
   },

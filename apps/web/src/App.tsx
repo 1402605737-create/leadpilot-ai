@@ -13,7 +13,7 @@ import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, Pie, PieChart, Res
 
 type Page = "dashboard" | "leads" | "intelligence" | "scoring" | "outreach" | "replies" | "meeting" | "icp";
 type Lang = "en" | "zh";
-const API = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+const API = import.meta.env.VITE_API_BASE_URL || (import.meta.env.PROD ? "https://leadpilot-ai-api.vercel.app" : "http://localhost:3000");
 const channels: Channel[] = ["Cold Email", "LinkedIn", "Call Opener", "Follow-up Email"];
 const roles = ["CEO", "VP Sales", "Head of Marketing", "IT Director", "HR Director", "RevOps"];
 const weekly = [{ w: "W1", v: 3 }, { w: "W2", v: 4 }, { w: "W3", v: 4 }, { w: "W4", v: 6 }, { w: "W5", v: 8 }, { w: "W6", v: 11 }];

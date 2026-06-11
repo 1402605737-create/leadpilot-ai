@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { classifyReply, calculateLeadScore, defaultICP, generateNextStep, mockLeads } from "./index";
+import { classifyReply, calculateLeadScore, defaultICP, generateNextStep, mockLeads } from "./index.js";
 
 describe("LeadPilot rules", () => {
   it("scores the same lead deterministically", () => {
@@ -18,4 +18,3 @@ describe("LeadPilot rules", () => {
     expect(generateNextStep("Rejection", mockLeads[0])).toContain("Stop outreach");
   });
 });
-

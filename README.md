@@ -2,7 +2,7 @@
 
 **把冷线索转化为合格销售会议的、受控且可解释的 AI SDR Agent。**
 
-线上链接将在最终部署验收后写入本页第一屏。
+**[GitHub](https://github.com/1402605737-create/leadpilot-ai) · [Live Demo](https://leadpilot-ai-web.vercel.app) · [API Health](https://leadpilot-ai-api.vercel.app/health)**
 
 LeadPilot AI 面向中小型 B2B 销售团队，将线索评分、客户研究、个性化触达、回复分类、会议准备和 CRM 更新串成一个可审计工作流。产品不会自动发送外部消息；每个高风险动作都需要人工确认。
 
@@ -27,10 +27,10 @@ npm install
 npm run dev
 ```
 
-API 需要配置 `apps/api/.env.local` 后运行：
+API 需要配置环境变量后从 monorepo 根目录运行：
 
 ```bash
-vercel dev apps/api
+vercel dev
 ```
 
 完整验证：
@@ -46,6 +46,7 @@ npm run build
 ```text
 apps/web       React + TypeScript + Vite 前端
 apps/api       Vercel Serverless API 与 Postgres 初始化脚本
+api            Vercel 根级 Serverless 入口
 packages/shared 数据类型、规则引擎和 demo 数据
 docs           产品与指标文档
 ```
