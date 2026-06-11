@@ -5,6 +5,7 @@ dist/
 .env.*
 !.env.example
 *.log
+*.tmp
 *.sqlite
 *.sqlite3
 *.db
@@ -16,7 +17,9 @@ Thumbs.db
 *password*
 *connection-string*
 *credentials*
+*secret*
+*pooler*
+*init-sql*
 curl-output*
 tmp/
 .cache/
-

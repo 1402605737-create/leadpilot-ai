@@ -18,6 +18,7 @@ LeadPilot AI 面向中小型 B2B 销售团队，将线索评分、客户研究�
 - DeepSeek 真实模型调用与规则 fallback；展示 Agent 轨迹、证据、结果和模型来源。
 - 所有触达仅生成草稿，拒绝或退订意向会停止后续触达。
 - React 状态保存到 localStorage；基础数据与 AI 调用记录保存到 Supabase Postgres。
+- 数据库使用独立 `leadpilot` Schema 与最小权限 `leadpilot_app` 登录角色；生产 API 不执行 DDL。
 
 ## 本地运行
 
@@ -59,4 +60,3 @@ docs           产品与指标文档
 ## 路线图
 
 CRM 双向同步、邮箱与日历连接器、团队权限、实验与归因、企业级审计策略。
-

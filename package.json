@@ -13,10 +13,10 @@
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
-    "db:init": "npm run db:init -w @leadpilot/api"
+    "db:prepare": "npm run db:prepare -w @leadpilot/api",
+    "db:verify": "npm run db:verify -w @leadpilot/api"
   },
   "engines": {
     "node": ">=20"
   }
 }
-

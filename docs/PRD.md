@@ -28,8 +28,8 @@ LeadPilot AI 服务 SDR、BD、AE、销售经理与 RevOps。中小型 B2B 团�
 - Agent 仅接受固定任务和已知 lead ID，不接受任意 prompt。
 - 保存模型、fallback、证据、步骤和结果，形成审计链。
 - 生产 API 使用精确 CORS allowlist、请求大小限制和速率限制。
+- 共享 Supabase 项目内使用独立 `leadpilot` Schema、独立 `leadpilot_app` 角色和表级 RLS；应用查询始终显式引用完整表名。
 
 ## 下一版
 
 团队与角色权限、CRM/邮箱沙箱连接器、Agent 评测集、可配置审批策略、实验与归因。
-

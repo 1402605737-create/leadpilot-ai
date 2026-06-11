@@ -7,7 +7,8 @@
     "lint": "tsc --noEmit",
     "test": "node --test",
     "build": "tsc --noEmit",
-    "db:init": "tsx scripts/init-db.ts"
+    "db:prepare": "tsx scripts/prepare-isolated-db.ts",
+    "db:verify": "tsx scripts/verify-isolated-db.ts"
   },
   "dependencies": {
     "@leadpilot/shared": "*",
