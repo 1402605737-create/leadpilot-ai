@@ -43,10 +43,10 @@ function Card({ children, className = "", style }: { children: ReactNode; classN
 export default function App() {
   const [lang, setLang] = useStored<Lang>("leadpilot-lang-v2", "zh");
   const [page, setPage] = useState<Page>("dashboard");
-  const [icp, setIcp] = useStored<ICP>("leadpilot-icp", defaultICP);
-  const [selectedId, setSelectedId] = useStored("leadpilot-selected", mockLeads[0].id);
-  const [drafts, setDrafts] = useStored<OutreachDraft[]>("leadpilot-drafts", []);
-  const [audits, setAudits] = useStored<AuditEvent[]>("leadpilot-audits", []);
+  const [icp, setIcp] = useStored<ICP>("leadpilot-icp-v2", defaultICP);
+  const [selectedId, setSelectedId] = useStored("leadpilot-selected-v2", mockLeads[0].id);
+  const [drafts, setDrafts] = useStored<OutreachDraft[]>("leadpilot-drafts-v2", []);
+  const [audits, setAudits] = useStored<AuditEvent[]>("leadpilot-audits-v2", []);
   const [runs, setRuns] = useState<AgentRun[]>([]);
   const [channel, setChannel] = useState<Channel>("Cold Email");
   const [role, setRole] = useState("销售副总裁");
