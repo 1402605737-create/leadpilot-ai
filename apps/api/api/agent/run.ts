@@ -34,7 +34,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       fallback,
       status: "completed",
       evidence: [lead.industry, lead.region, ...lead.recentSignals, ...lead.painPoints],
-      steps: ["Validate fixed task and account", "Collect account evidence", fallback ? "Run deterministic fallback" : "Call DeepSeek", "Apply human-review guardrail"],
+      steps: ["验证固定任务与客户", "收集客户证据", fallback ? "运行确定性规则兜底" : "调用 DeepSeek", "应用人工审核护栏"],
       result,
       createdAt: new Date().toISOString()
     };

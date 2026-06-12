@@ -8,7 +8,8 @@
     "test": "node --test",
     "build": "tsc --noEmit",
     "db:prepare": "tsx scripts/prepare-isolated-db.ts",
-    "db:verify": "tsx scripts/verify-isolated-db.ts"
+    "db:verify": "tsx scripts/verify-isolated-db.ts",
+    "db:sync-demo": "tsx scripts/sync-demo-data.ts"
   },
   "dependencies": {
     "@leadpilot/shared": "*",
